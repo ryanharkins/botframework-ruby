@@ -11,13 +11,23 @@ module BotFramework
     end
 
     def get_conversation_members(conversation_id)
-      uri = "/v3/conversations/#{conversation_id}/activities/members"
-      api_get(uri, opts)
+      uri = "/v3/conversations/#{conversation_id}/members"
+      api_get(uri)
     end
 
     def send(conversation_id, activity)
       uri = "/v3/conversations/#{conversation_id}/activities"
       api_post(uri, activity.as_json)
+    end
+
+    def update_activity(conversation_id, activity_id, new_activity)
+      uri = "/v3/conversations/#{conversation_id}/activities/#{activity_id}"
+      api_put(uri, new_activity.as_json)
+    end
+
+    def delete_activity(conversation_id, activity_id)
+      uri = "/v3/conversations/#{conversation_id}/activities/#{activity_id}"
+      api_delete(uri)
     end
 
     def upload_attachment(conversation_id, opts = {})

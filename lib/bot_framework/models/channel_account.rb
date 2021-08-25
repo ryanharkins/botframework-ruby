@@ -7,11 +7,14 @@ module BotFramework
     # Display friendly name
     attr_accessor :name
 
+    attr_accessor :aad_object_id
+
     # Attribute type mapping.
     def self.swagger_types
       {
         id: :String,
-        name: :String
+        name: :String,
+        aad_object_id: :String
       }
     end
   end

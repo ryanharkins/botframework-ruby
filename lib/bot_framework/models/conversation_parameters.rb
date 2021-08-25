@@ -30,7 +30,7 @@ module BotFramework
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      self.is_group = attributes[:isGroup] if attributes.key?(:isGroup)
+      self.is_group = attributes[:is_group] if attributes.key?(:is_group)
 
       self.bot = attributes[:bot] if attributes.key?(:bot)
 

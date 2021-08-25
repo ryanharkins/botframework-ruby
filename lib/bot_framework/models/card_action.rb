@@ -8,8 +8,14 @@ module BotFramework
 
     # URL Picture which will appear on the button, next to text label.
     attr_accessor :image
-    # Text for this action
 
+    # Adaptive card data
+    attr_accessor :data
+
+    # Adaptive url
+    attr_accessor :url
+
+    # Text for this action
     attr_accessor :text
 
     # (Optional) text to display in the chat feed if the button is clicked
@@ -24,6 +30,8 @@ module BotFramework
       {
         type: :String,
         title: :String,
+        url: :String,
+        data: :String,
         image: :String,
         text:  :String,
         display_text: :String,

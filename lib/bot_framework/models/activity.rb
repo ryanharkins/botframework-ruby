@@ -30,6 +30,8 @@ module BotFramework
     # AttachmentLayout - hint for how to deal with multiple attachments Values: [list|carousel] Default:list
     attr_accessor :attachment_layout
 
+    attr_accessor :value
+
     # Array of address added
     attr_accessor :members_added
 
@@ -85,6 +87,7 @@ module BotFramework
         history_disclosed: :BOOLEAN,
         locale: :String,
         text: :String,
+        value: :Object,
         summary: :String,
         attachments: :'Array<Attachment>',
         entities: :'Array<Entity>',
